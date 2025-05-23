@@ -12,15 +12,6 @@ Task Tracker API built with **Django REST Framework**, supporting:
 
 ##  Getting Started
 
-### Clone the repository
-
-```bash
-git clone <your-repo-url>
-cd task-tracker-api
-```
-
----
-
 ##  Running with Docker Compose
 
 ### Build and start the containers

@@ -21,6 +21,8 @@ services:
     ports:
       - "8000:8000"
     environment:
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - DEBUG=1
       - POSTGRES_DB=taskdb
       - POSTGRES_USER=taskuser

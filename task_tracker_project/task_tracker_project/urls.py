@@ -10,16 +10,17 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from task_app.views import UserRegistrationView
-
+from task_app import views 
 
 router = routers.DefaultRouter()
 router.register(r'tasks', TaskViewSet)
 
 def home(request):
-    return HttpResponse("Welcome to the Task Tracker API!")
+    return HttpResponse("Welcome to my magical kingdom!")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('status/', views.api_status, name='api_status'),
     path('', home),
     path('api/register/', UserRegistrationView.as_view(), name='user-register'),
     path('api/', include(router.urls)),

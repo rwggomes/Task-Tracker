@@ -9,6 +9,8 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from task_app.views import UserRegistrationView
+
 
 router = routers.DefaultRouter()
 router.register(r'tasks', TaskViewSet)
@@ -19,6 +21,7 @@ def home(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
+    path('api/register/', UserRegistrationView.as_view(), name='user-register'),
     path('api/', include(router.urls)),
     path('api/upload/', FileUploadView.as_view(), name='file-upload'),
  

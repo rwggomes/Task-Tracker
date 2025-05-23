@@ -7,7 +7,15 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import generics
+from .serializers import UserRegistrationSerializer
+from django.contrib.auth.models import User
 
+
+
+class UserRegistrationView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserRegistrationSerializer
 
 class FileUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)

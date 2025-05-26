@@ -1,24 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>API Status</title>
-    <style>
-        body {
-            display: flex;
-            height: 100vh;
-            margin: 0;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Techno Futurist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #00fff7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 4rem;
+      text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+      animation: flicker 2s infinite;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      text-align: center;
+      max-width: 600px;
+      color: #ccc;
+    }
+
+    .button {
+      margin-top: 40px;
+      padding: 15px 30px;
+      border: 2px solid #00fff7;
+      border-radius: 10px;
+      background: transparent;
+      color: #00fff7;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: #00fff7;
+      color: #0f0c29;
+      box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0.4;
+      }
+    }
+
+    .grid {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to right,
+        rgba(0, 255, 247, 0.05) 0 1px,
+        transparent 1px 50px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        rgba(0, 255, 247, 0.05) 0 1px,
+        transparent 1px 50px
+      );
+      pointer-events: none;
+    }
+
+    .glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0,255,247,0.3) 0%, rgba(0,0,0,0) 70%);
+      animation: moveGlow 10s linear infinite;
+    }
+
+    @keyframes moveGlow {
+      0% { top: 10%; left: 10%; }
+      50% { top: 80%; left: 80%; }
+      100% { top: 10%; left: 10%; }
+    }
+  </style>
 </head>
 <body>
-    <h1>This API works</h1>
+
+  <div class="grid"></div>
+  <div class="glow"></div>
+
+  <h1>Bem vindo ao futuro </h1>
+  <p>Isso é pra quem fala que API não tem interface .</p>
+  <button class="button">Tem sim</button>
+
 </body>
 </html>

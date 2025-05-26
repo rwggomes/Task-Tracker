@@ -24,9 +24,6 @@ class FileUploadView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-        ...
-
-    def post(self, request, *args, **kwargs):
         file_obj = request.FILES.get('file')
         if not file_obj:
             return Response({'error': 'No file provided.'}, status=status.HTTP_400_BAD_REQUEST)

@@ -11,16 +11,18 @@ from rest_framework_simplejwt.views import (
 )
 from task_app.views import UserRegistrationView
 from task_app import views 
+from django.shortcuts import render
 
 router = routers.DefaultRouter()
 router.register(r'tasks', TaskViewSet)
 
 def home(request):
-    return HttpResponse("Welcome to my magical kingdom!")
+    return render(request, 'home.html')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('status/', views.api_status, name='api_status'),
+    path('', views.home, name='Home'),
     path('', home),
     path('api/register/', UserRegistrationView.as_view(), name='user-register'),
     path('api/', include(router.urls)),

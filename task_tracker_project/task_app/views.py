@@ -12,8 +12,8 @@ from .serializers import UserRegistrationSerializer
 from django.contrib.auth.models import User
 from django.shortcuts import render
 
-def api_status(request):
-    return render(request, 'status.html')
+def home(request):
+    return render(request, 'home.html')
 
 class UserRegistrationView(generics.CreateAPIView):
     queryset = User.objects.all()
